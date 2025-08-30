@@ -1,0 +1,707 @@
+/* Global */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav {
+  display: flex;
+  justify-content: space-between; /* logo on left, links on right */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff; /* or your color */
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3d2121; /* blue accent */
+}
+
+.navbar nav a {
+  margin: 0 1rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: #3b82f6;
+}
+
+/* Cart Icon */
+.cart-icon {
+  font-size: 1.2rem;
+  position: relative;
+  cursor: pointer;
+  color: #111827;
+}
+
+#cart-count {
+  background: #3d2121;
+  color: #fff;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: -10px;
+  right: -15px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Wrapper */
+.product-card img {
+  width: 100%;
+  height: 300px; /* 👈 fixed height */
+  object-fit: cover; /* 👈 keeps proportions, crops excess */
+  border-radius: 0.75rem;
+}
+
+/* Product Info */
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #111827;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Price */
+.product-card .price {
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 0.75rem;
+}
+
+/* Button */
+.product-card button {
+  padding: 0.5rem 1rem;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.product-card button:hover {
+  background: #666666;
+}
+
+.price {
+  color: #ad0303;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.add-to-cart {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  font-weight: 500;
+}
+
+.add-to-cart:hover {
+  background: #2563eb; /* darker blue */
+}
+
+/* Cart Sidebar */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+.cart-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Sticky footer */
+.cart-footer {
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  text-align: center;
+  background: #f9fafb;
+  z-index: 10;
+}
+
+.cart-footer p {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.checkout-btn {
+  background: #25d366; /* WhatsApp green */
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.checkout-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 900;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qty-btn {
+  background: #e5e7eb;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.qty-btn:hover {
+  background: #d1d5db;
+}
+
+.qty {
+  min-width: 20px;
+  text-align: center;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #ef4444;
+}
+
+.remove-btn:hover {
+  color: #dc2626;
+}
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #e8f6ff, #ffffff);
+  border-radius: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a; /* deep blue */
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+  color: #374151;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background: #2563eb;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-image img {
+    margin: 2rem auto 0;
+  }
+}
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  background: linear-gradient(to right, #f1f1f1, #ffffff);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.slide img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2b1818;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+  color: #374151;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #000000;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background: #2563eb;
+}
+
+/* Slider navigation dots */
+.slider-nav {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.slider-nav .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #9ca3af;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slider-nav .dot.active {
+  background: #3b82f6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .slide {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .slide img {
+    margin: 2rem auto 0;
+  }
+}
+.contact-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-top: 0.5rem;
+  background: #3b82f6; /* blue background */
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-btn:hover {
+  background: #1e3a8a; /* darker blue on hover */
+  transform: scale(1.05); /* slight zoom */
+}
+/* Section Base */
+section {
+  padding: 4rem 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+/* Base Section Styles */
+section {
+  padding: 4rem 2rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* About Section */
+.about-section {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #0e0e0e;
+  color: #f9fafb;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s, opacity 0.3s;
+}
+
+.contact-btn i {
+  font-size: 1.2rem;
+}
+
+/* Button Colors */
+.contact-btn.whatsapp {
+  background: #25d366;
+}
+.contact-btn.whatsapp:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.contact-btn.instagram {
+  background: linear-gradient(45deg, #fd1d1d, #e1306c, #c13584, #833ab4);
+}
+.contact-btn.instagram:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.contact-btn.call {
+  background: #0051ff;
+}
+.contact-btn.call:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  /* Hero section */
+  .hero {
+    height: 250px; /* smaller height for phones */
+    padding: 1rem;
+  }
+  .hero img {
+    object-fit: cover;
+    height: 100%;
+  }
+  .hero h1,
+  .hero p {
+    font-size: 1rem; /* make text smaller */
+    text-align: center;
+  }
+
+  /* Cart Sidebar */
+  .cart-sidebar {
+    width: 100%; /* full width on small screens */
+    max-width: 100%;
+  }
+}
+/* ✅ Mobile (bottom drawer) */
+@media (max-width: 768px) {
+  .cart-sidebar {
+    top: auto;
+    bottom: -100%;
+    right: 0;
+    width: 100%;
+    height: 60%; /* takes 60% of screen height */
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    transition: bottom 0.3s ease-in-out;
+  }
+
+  .cart-sidebar.open {
+    bottom: 0;
+    right: 0;
+  }
+}
+@media (max-width: 600px) {
+  /* Navbar (hide links, we can later add hamburger) */
+  .navbar nav {
+    display: none; /* for now just hides, won't break */
+  }
+
+  /* Product images shorter */
+  .product-card img {
+    height: auto;
+    max-height: 200px;
+  }
+
+  /* Hero text smaller */
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  /* Contact buttons stack */
+  .contact-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+/* Image slider container */
+.image-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: #f9fafb;
+  padding: 1rem 0;
+}
+
+/* Track that holds images */
+.slider-track {
+  display: flex;
+  gap: 2rem;
+  width: calc(200px * 12); /* 6 images duplicated → total 12 */
+  animation: scroll-left 30s linear infinite;
+}
+
+/* Each image */
+.slider-track img {
+  height: 200px; /* size of the moving images */
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.slider-track img:hover {
+  transform: scale(1.1);
+}
+
+/* Keyframes for smooth scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* Image slider container */
+.image-slider {
+  overflow: hidden;
+  width: 100%;
+  background: #f9fafb;
+  padding: 1rem 0;
+}
+
+/* Track that holds images */
+.slider-track {
+  display: flex;
+  gap: 2rem;
+  width: calc(300px * 12); /* 12 flyers (6 originals + 6 duplicates) */
+  animation: scroll-left 30s linear infinite;
+}
+
+/* Pause on desktop hover */
+.image-slider:hover .slider-track {
+  animation-play-state: paused;
+}
+
+/* Each image (flyers/posters) */
+.slider-track img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.slider-track img:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes for smooth scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* Flying Image Animation */
+.flying-img {
+  position: fixed;
+  z-index: 2000;
+  pointer-events: none;
+  transition: all 1s ease-in-out;
+  border-radius: 8px;
+}

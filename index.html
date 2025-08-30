@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drezzup</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">Drezzup Store</div>
+      <nav>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </nav>
+      <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
+    </header>
+    <!-- Hero Section -->
+    <!-- Hero Slider -->
+    <section id="home" class="hero-slider">
+      <div class="slides">
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <div class="hero-content">
+            <h1>Step Into Style</h1>
+            <p>Find your perfect pair of shoes at unbeatable prices.</p>
+            <a href="#shop" class="hero-btn">Shop Now</a>
+          </div>
+          <div class="hero-image">
+            <img src="shoe5.png" alt="Stylish Shoes" />
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="hero-content">
+            <h1>New Arrivals</h1>
+            <p>Fresh designs just landed. Don’t miss out!</p>
+            <a href="#shop" class="hero-btn">Browse</a>
+          </div>
+          <div class="hero-image">
+            <img
+              src="WhatsApp Image 2025-08-26 at 11.55.00_5a3a8cd1.png"
+              alt="New Shoes" />
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <div class="hero-content">
+            <h1>Hot Sale 🔥</h1>
+            <p>Up to 50% off selected shoes this week.</p>
+            <a href="#shop" class="hero-btn">Shop Sale</a>
+          </div>
+          <div class="hero-image">
+            <img
+              src="WhatsApp Image 2025-08-26 at 11.51.19_0981b6bd.png"
+              alt="Sale Shoes" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="slider-nav">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <main id="shop" class="product-grid">
+      <!-- Cart Sidebar -->
+      <aside id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+          <h2>Your Cart</h2>
+          <button id="close-cart" class="close-btn">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+          <p>Total: <span id="cart-total">GHS 0</span></p>
+          <button id="checkout-btn" class="checkout-btn">
+            Checkout via WhatsApp
+          </button>
+        </div>
+      </aside>
+
+      <!-- Overlay (behind cart) -->
+      <div id="overlay" class="overlay"></div>
+
+      <div class="product-card">
+        <img src="Shoe box.png" alt="Sneaker" />
+        <h3>Sneaker box</h3>
+        <p class="price">GHS 50</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="shoe2.png" alt="Leather Shoe" />
+        <h3>Leather Classic</h3>
+        <p class="price">GHS 320</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="shoe4.png" alt="Boots" />
+        <h3>Urban Boots</h3>
+        <p class="price">GHS 400</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="shoe5.png" alt="Boots" />
+        <h3>shoe 1</h3>
+        <p class="price">GHS 200</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="WhatsApp Image 2025-08-26 at 11.55.00_5a3a8cd1.png"
+          alt="Boots" />
+        <h3>shoe 2</h3>
+        <p class="price">GHS 500</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="WhatsApp Image 2025-08-26 at 11.51.19_0981b6bd.png"
+          alt="Boots" />
+        <h3>shoe 3</h3>
+        <p class="price">GHS 300</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="JPGSHOE.jpg" alt="Boots" />
+        <h3>shoe 1</h3>
+        <p class="price">GHS 200</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="JPGSHOE1.jpg" alt="Boots" />
+        <h3>shoe 1</h3>
+        <p class="price">GHS 200</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="JPGSHOE2.jpg" alt="Boots" />
+        <h3>shoe 1</h3>
+        <p class="price">GHS 200</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="JPGSHOE3.jpg" alt="Boots" />
+        <h3>shoe 1</h3>
+        <p class="price">GHS 200</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </main>
+
+    <section class="image-slider">
+      <div class="slider-track">
+        <!-- Original set -->
+        <img src="slideing.jpg" alt="Flyer 1" />
+        <img src="slideing1.jpg" alt="Flyer 2" />
+        <img src="slideing2.jpg" alt="Flyer 3" />
+        <img src="slideing3.jpg" alt="Flyer 4" />
+        <img src="slideing4.jpg" alt="Flyer 5" />
+        <img src="slideing5.jpg" alt="Flyer 6" />
+
+        <!-- Duplicate set for seamless loop -->
+        <img src="slideing6.jpg" alt="Flyer 1" />
+        <img src="slideing7.jpg" alt="Flyer 2" />
+        <img src="slideing8.jpg" alt="Flyer 3" />
+        <img src="slideing9.jpg" alt="Flyer 4" />
+        <img src="slideing10.jpg" alt="Flyer 5" />
+        <img src="slideing6.jpg" alt="Flyer 6" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          At <strong>Drezzup Sneakers</strong>, we believe style should be
+          effortless. From sneakers to formal shoes, sandals to boots — we bring
+          you quality footwear that blends comfort and fashion. Our mission is
+          to keep you stepping forward with confidence.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>Reach us easily through any of the platforms below:</p>
+
+        <div class="contact-buttons">
+          <!-- WhatsApp -->
+          <a
+            href="https://wa.me/233541509852?text=May%20I%20make%20enquiries%3F"
+            target="_blank"
+            class="contact-btn whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <!-- Instagram -->
+          <a
+            href="https://instagram.com/drezzupsneakers"
+            target="_blank"
+            class="contact-btn instagram">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+
+          <!-- Phone Call -->
+          <a href="tel:+233548829295" class="contact-btn call">
+            <i class="fas fa-phone-alt"></i> Call Us
+          </a>
+        </div>
+      </div>
+    </section>
+    <script>
+      const sliderTrack = document.querySelector(".slider-track");
+
+      // Pause when user touches and holds on mobile
+      sliderTrack.addEventListener("touchstart", () => {
+        sliderTrack.style.animationPlayState = "paused";
+      });
+
+      // Resume when user releases
+      sliderTrack.addEventListener("touchend", () => {
+        sliderTrack.style.animationPlayState = "running";
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
